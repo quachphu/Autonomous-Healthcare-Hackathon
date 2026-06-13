@@ -1,0 +1,5 @@
+-- Placeholder migration. Future rPPG analysis and checkup tables will be added here.
+-- Example domains to model:
+--   - profiles (extends auth.users with display name, due date, care team)
+--   - checkup_sessions (rPPG session results per user)
+--   - messages (care team threads)

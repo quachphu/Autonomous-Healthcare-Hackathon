@@ -1,0 +1,13 @@
+Generic single-database configuration for NatalNanny.
+
+Run from `backend/` with the virtualenv active:
+
+  pip install -r requirements.txt
+  python -m alembic revision --autogenerate -m "describe change"
+  python -m alembic upgrade head
+  python -m alembic downgrade -1
+
+Use `python -m alembic` (not bare `alembic`) so the project venv is used,
+not a globally installed Alembic on another Python.
+
+`DATABASE_URL` is read from app settings (`.env` or env vars).

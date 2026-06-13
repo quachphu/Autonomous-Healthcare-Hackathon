@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+
+# Build output
+frontend/dist/
+frontend/.vite/
+
+# Environment files — NEVER commit these
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+
+# rPPG session output (recordings + results — large binary files)
+backend/rppg/output/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.mypy_cache/
+.ruff_cache/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Supabase local dev
+supabase/.branches/
+supabase/.temp/
+
+# Agents
+.claude/
+.cursor.md
+CLAUDE.md

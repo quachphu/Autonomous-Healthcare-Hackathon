@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  /* Materna Athletic palette — vivid, high-contrast, performance-grade */
+  --color-nn-soft-blue: #DBEAFE;       /* Bright sky blue (light areas) */
+  --color-nn-pale-sky: #F0F6FF;        /* Near-white athletic background */
+  --color-nn-periwinkle: #93C5FD;      /* Electric periwinkle */
+  --color-nn-deep-blue: #1D4ED8;       /* Performance electric blue (CTAs) */
+  --color-nn-mist: #BFDBFE;            /* Subtle blue dividers */
+  --color-nn-navy: #0F172A;            /* Ultra-dark for strong contrast text */
+  --color-nn-navy-light: #334155;      /* Slate secondary text */
+  --color-nn-deep-blue-hover: #1E40AF; /* Deeper blue hover */
+
+  /* Brand scale */
+  --color-brand-50: #EFF6FF;
+  --color-brand-100: #DBEAFE;
+  --color-brand-200: #93C5FD;
+  --color-brand-500: #1D4ED8;
+  --color-brand-600: #1E40AF;
+  --color-brand-700: #0F172A;
+
+  /* Typography */
+  --font-sans:    'Nunito',  'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-body:    'DM Sans', 'Nunito',  ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Nunito',  ui-sans-serif, system-ui, sans-serif;
+
+  /* Rounded corners — slightly sharper for athletic feel */
+  --radius-card: 1.25rem;  /* 20px */
+  --radius-btn:  0.625rem; /* 10px */
+
+  /* Spacing scale */
+  --space-card-padding: 1.5rem;
+  --space-page-padding: 2rem;
+  --space-section-gap: 1.25rem;
+  --space-element-gap: 0.75rem;
+
+  /* Button sizing */
+  --btn-padding-primary:   1rem 1.5rem;
+  --btn-padding-secondary: 0.75rem 1.25rem;
+  --btn-padding-small:     0.625rem 1rem;
+}
+
+/* ── Reset & base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Lock viewport height for the app shell */
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Slightly tighter letter-spacing looks great with Nunito */
+  letter-spacing: -0.01em;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Nunito headings feel best with a touch of tighter tracking */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Prose / description text uses DM Sans */
+p, li, label, input, textarea, select {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c1d8f0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4663ac; }
+
+/* ── Animations ── */
+@keyframes recording-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.2); }
+}
+.recording-dot { animation: recording-pulse 1.2s ease-in-out infinite; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.fade-up   { animation: fade-up 0.35s ease both; }
+.fade-up-1 { animation-delay: 0.05s; }
+.fade-up-2 { animation-delay: 0.10s; }
+.fade-up-3 { animation-delay: 0.15s; }
+.fade-up-4 { animation-delay: 0.20s; }
+.fade-up-5 { animation-delay: 0.25s; }
+
+@keyframes bounce-dot {
+  0%, 80%, 100% { transform: translateY(0); }
+  40%            { transform: translateY(-6px); }
+}

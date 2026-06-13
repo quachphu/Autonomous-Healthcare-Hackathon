@@ -1,0 +1,24 @@
+# Supabase local development configuration.
+# Run `supabase init` to fully initialize local dev, then `supabase start` to
+# spin up a local Postgres + Auth stack.
+# See: https://supabase.com/docs/guides/cli/config
+
+[api]
+port = 54321
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+port = 54323
+
+[auth]
+site_url = "http://localhost:5173"
+additional_redirect_urls = []
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_confirmations = false
