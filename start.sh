@@ -5,7 +5,7 @@ set -e
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 BACKEND="$ROOT/backend"
 FRONTEND="$ROOT/frontend"
-VENV="/Users/phuthienquach/Downloads/Mama/main/backend/.venv/bin"
+VENV="$ROOT/backend/.venv/bin"
 
 echo "→ Killing any process on port 8000..."
 lsof -ti:8000 | xargs kill -9 2>/dev/null || true

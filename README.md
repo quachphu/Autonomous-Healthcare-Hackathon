@@ -101,7 +101,7 @@ FastAPI
 ### 1. Clone and configure
 
 ```bash
-cd main2/backend
+cd backend
 cp .env.example .env   # fill in your API keys (see below)
 ```
 
@@ -120,14 +120,14 @@ docker run -d \
 ### 3. Run migrations
 
 ```bash
-cd main2/backend
+cd backend
 .venv/bin/alembic upgrade head
 ```
 
 ### 4. (Optional) Seed 7 weeks of demo data
 
 ```bash
-cd main2/backend
+cd backend
 .venv/bin/python scripts/seed_demo_data.py
 ```
 
@@ -136,7 +136,7 @@ This creates demo user **Sarah** (35 weeks pregnant) with 49 sessions of histori
 ### 5. Start everything
 
 ```bash
-~/Downloads/Mama/main2/start.sh
+./start.sh
 ```
 
 This kills any existing process on port 8000, starts the FastAPI backend, waits for it to be healthy, then starts the Vite dev server.
@@ -156,7 +156,7 @@ This kills any existing process on port 8000, starts the FastAPI backend, waits 
 
 ## Environment Variables
 
-Create `main2/backend/.env` with the following keys:
+Create `backend/.env` with the following keys:
 
 ```env
 # Database
@@ -239,7 +239,7 @@ After every completed session, `send_daily_report_email()` runs in a background 
 ## Project Structure
 
 ```
-main2/
+./
 ├── backend/
 │   ├── app/
 │   │   ├── routers/
