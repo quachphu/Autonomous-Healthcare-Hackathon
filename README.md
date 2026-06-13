@@ -23,7 +23,7 @@ Every day, a patient opens Materna and completes a 45-second check-in:
 - **SQLAlchemy** + **Alembic** — ORM and schema migrations
 - **PostgreSQL** (local Docker) — primary data store
 - **Supabase** — auth, file storage, and optional cloud DB
-- **OpenCV + NumPy + SciPy** — rPPG signal processing pipeline
+- **OpenCV + NumPy + SciPy** — rPPG signal processing pipeline (see [rPPG-Toolbox](https://github.com/ubicomplab/rPPG-Toolbox))
 - **xAI Grok Voice API** (`grok-voice-think-fast-1.0`) — real-time bidirectional voice WebSocket
 - **OpenAI** (`gpt-4o-mini`, Whisper) — conversation summarization + RAG embeddings
 - **Twilio** — SMS reminders + emergency outbound AI voice call
@@ -73,7 +73,7 @@ FastAPI
 - Python 3.11
 - Node.js 18+
 - Docker (for local PostgreSQL)
-- A virtual environment at `main/backend/.venv` (or adjust `start.sh`)
+- A virtual environment at `backend/.venv` (or adjust `start.sh`)
 
 ### 1. Clone and configure
 
@@ -239,7 +239,7 @@ After every completed session, `send_daily_report_email()` runs in a background 
 │   │   │   └── session_metrics.py    # HR extraction, trend helpers
 │   │   ├── demo_config.py            # demo patient, recipients, session length
 │   │   └── main.py                   # FastAPI app, CORS, router mounts
-│   ├── rppg/                         # rPPG signal processing (POS, CHROM algorithms)
+│   ├── rppg/                         # rPPG signal processing — adapted from [rPPG-Toolbox](https://github.com/ubicomplab/rPPG-Toolbox) (POS, CHROM algorithms)
 │   ├── scripts/
 │   │   └── seed_demo_data.py         # seeds 7 weeks of historical check-in data
 │   └── alembic/                      # database migrations
@@ -272,6 +272,12 @@ After every completed session, `send_daily_report_email()` runs in a background 
 - **Emergency number**: `+17143101206` (configurable via `EMERGENCY_CALL_RECIPIENT`)
 - **Report emails**: `quachphuwork@gmail.com` + `thienphu.quach01@student.csulb.edu`
 - **Mascot**: "Mia" — anime baby with 4 mood states (superSad / sad / happy / superHappy) reflecting mascot health score
+
+---
+
+## Acknowledgements
+
+- **[rPPG-Toolbox](https://github.com/ubicomplab/rPPG-Toolbox)** — the rPPG signal processing pipeline in this project is adapted from the rPPG-Toolbox open-source framework by the [UbiComp Lab](https://ubicomplab.cs.washington.edu/) at the University of Washington. It provides implementations of POS, CHROM, and other camera-based heart rate estimation algorithms.
 
 ---
 
