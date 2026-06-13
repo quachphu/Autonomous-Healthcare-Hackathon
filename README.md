@@ -15,34 +15,10 @@ Every day, a patient opens Materna and completes a 45-second check-in:
 
 ---
 
-## Features
-
-| Feature | Status |
-|---|---|
-| rPPG heart rate + respiratory rate from webcam | ✅ |
-| Apple Watch biometric simulation (HRV, SpO₂, sleep, RR) | ✅ |
-| Real-time conversational voice agent (xAI Grok Voice WebSocket) | ✅ |
-| Emergency phrase detection → Twilio outbound AI voice call | ✅ |
-| Live transcript accumulation → personalized call message | ✅ |
-| Per-session personalized HTML email report | ✅ |
-| Email sent to multiple recipients (family + demo viewers) | ✅ |
-| Multiple check-ins per day (all saved, all reported) | ✅ |
-| Check-in streak tracking + mascot health score | ✅ |
-| RAG chat ("Ask Materna AI") over uploaded health documents | ✅ |
-| Doctor / patient role system with care-team messaging | ✅ |
-| Real-time WebSocket messaging between patient and doctor | ✅ |
-| Doctor patient list with full check-in history | ✅ |
-| Appointment booking page | ✅ |
-| 3-tier documentation: Daily Summary → Weekly Rollup → Full PDF | ✅ |
-| Admin panel (user management, audit, notifications) | ✅ |
-| Demo data seeding script (7 weeks of historical sessions) | ✅ |
-| Anime mascot "Mia" with 4 mood states | ✅ |
-
----
-
 ## Tech Stack
 
 ### Backend
+
 - **Python 3.11** + **FastAPI** — REST API + WebSocket server
 - **SQLAlchemy** + **Alembic** — ORM and schema migrations
 - **PostgreSQL** (local Docker) — primary data store
@@ -56,6 +32,7 @@ Every day, a patient opens Materna and completes a 45-second check-in:
 - **Google Gemini** — voice agent fallback
 
 ### Frontend
+
 - **React 18** + **TypeScript** + **Vite**
 - **Tailwind CSS v4** — utility-first styling
 - **React Router v7** — client-side routing
@@ -146,11 +123,11 @@ This kills any existing process on port 8000, starts the FastAPI backend, waits 
 
 ### Demo login
 
-| Field | Value |
-|---|---|
-| Email | `quachphuwork@gmail.com` |
+| Field    | Value                         |
+| -------- | ----------------------------- |
+| Email    | `quachphuwork@gmail.com`      |
 | Password | (your Supabase user password) |
-| Role | Patient (Sarah, Week 35) |
+| Role     | Patient (Sarah, Week 35)      |
 
 ---
 
